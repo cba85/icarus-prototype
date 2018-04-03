@@ -1,22 +1,25 @@
 <?php
 namespace App;
 
+/**
+ * Controller
+ */
 Class Controller {
 
     /**
-     * Twig object
+     * object
      *
-     * @var Twig
+     * @var object
      */
-    protected $twig;
+    protected $view;
 
     /**
      * Constructor
      *
-     * @param Twig $twig
+     * @param object $view
      */
-    public function __construct($twig) {
-        $this->twig = $twig;
+    public function __construct($view) {
+        $this->view = $view;
     }
 
     /**
@@ -25,7 +28,10 @@ Class Controller {
      * @return void
      */
     public function index() {
-        echo $this->twig->render('index.html', []);
+        // Twig
+        echo $this->view->render('index.html', []);
+        // Laravel Blade
+        //echo $this->view->make('index', []);
     }
 
 }
